@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h2>Login</h2>
-        <form id="cadastroForm">
+        <form id="loginForm">
             <i class="ri-mail-line"></i>
             <input type="email" id="email" name="email" placeholder="Email" required>
             <i class="ri-lock-line"></i>
@@ -23,24 +23,6 @@
         <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
         <div id="resultados"></div>
     </div>
-    <script>
-
-        document.getElementById("cadastroForm").addEventListener("submit", function(event){
-
-            event.preventDefault();
-
-            var email = document.getElementById("email").value;
-            var senha = document.getElementById("senha").value;
-
-            var usuario = JSON.parse(localStorage.getItem("usuario"));
-
-            if(usuario && email === usuario.email && senha === usuario.senha){
-                document.getElementById("resultados").textContent = "Login bem-sucedido";
-            } else {
-                document.getElementById("resultados").textContent = "Email ou senha incorretos. Verifique suas credenciais";
-            }
-        });
-
-    </script>
+    <script src="login.js"></script>
 </body>
 </html>
